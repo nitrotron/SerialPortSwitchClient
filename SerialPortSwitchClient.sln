@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPortSwitchClient", "SerialPortSwitchClient\SerialPortSwitchClient.csproj", "{14FEDEFA-5E9F-4DB1-AADE-F0048B9BD390}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14FEDEFA-5E9F-4DB1-AADE-F0048B9BD390}.Debug|x86.ActiveCfg = Debug|x86
+		{14FEDEFA-5E9F-4DB1-AADE-F0048B9BD390}.Debug|x86.Build.0 = Debug|x86
+		{14FEDEFA-5E9F-4DB1-AADE-F0048B9BD390}.Release|x86.ActiveCfg = Release|x86
+		{14FEDEFA-5E9F-4DB1-AADE-F0048B9BD390}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
