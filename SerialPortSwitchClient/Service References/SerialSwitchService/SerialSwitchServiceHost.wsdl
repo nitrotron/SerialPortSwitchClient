@@ -8,62 +8,62 @@
       <xsd:import schemaLocation="http://localhost:8080/SerialSwitch?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BrewduinoCatalogLib" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ArduinoSelfHost_GetRawStatus_InputMessage">
+  <wsdl:message name="IArduinoSelfHost_GetRawStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRawStatus" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_GetRawStatus_OutputMessage">
+  <wsdl:message name="IArduinoSelfHost_GetRawStatus_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRawStatusResponse" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_GetStatus_InputMessage">
+  <wsdl:message name="IArduinoSelfHost_GetStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:GetStatus" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_GetStatus_OutputMessage">
+  <wsdl:message name="IArduinoSelfHost_GetStatus_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetStatusResponse" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_SendCommand_InputMessage">
+  <wsdl:message name="IArduinoSelfHost_SendCommand_InputMessage">
     <wsdl:part name="parameters" element="tns:SendCommand" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_SendCommand_OutputMessage">
+  <wsdl:message name="IArduinoSelfHost_SendCommand_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendCommandResponse" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_SendCommandWithResponse_InputMessage">
+  <wsdl:message name="IArduinoSelfHost_SendCommandWithResponse_InputMessage">
     <wsdl:part name="parameters" element="tns:SendCommandWithResponse" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_SendCommandWithResponse_OutputMessage">
+  <wsdl:message name="IArduinoSelfHost_SendCommandWithResponse_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendCommandWithResponseResponse" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_UpdateStatus_InputMessage">
+  <wsdl:message name="IArduinoSelfHost_UpdateStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateStatus" />
   </wsdl:message>
-  <wsdl:message name="ArduinoSelfHost_UpdateStatus_OutputMessage">
+  <wsdl:message name="IArduinoSelfHost_UpdateStatus_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateStatusResponse" />
   </wsdl:message>
-  <wsdl:portType name="ArduinoSelfHost">
+  <wsdl:portType name="IArduinoSelfHost">
     <wsdl:operation name="GetRawStatus">
-      <wsdl:input wsam:Action="http://tempuri.org/ArduinoSelfHost/GetRawStatus" message="tns:ArduinoSelfHost_GetRawStatus_InputMessage" />
-      <wsdl:output wsam:Action="http://tempuri.org/ArduinoSelfHost/GetRawStatusResponse" message="tns:ArduinoSelfHost_GetRawStatus_OutputMessage" />
+      <wsdl:input wsam:Action="http://tempuri.org/IArduinoSelfHost/GetRawStatus" message="tns:IArduinoSelfHost_GetRawStatus_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IArduinoSelfHost/GetRawStatusResponse" message="tns:IArduinoSelfHost_GetRawStatus_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetStatus">
-      <wsdl:input wsam:Action="http://tempuri.org/ArduinoSelfHost/GetStatus" message="tns:ArduinoSelfHost_GetStatus_InputMessage" />
-      <wsdl:output wsam:Action="http://tempuri.org/ArduinoSelfHost/GetStatusResponse" message="tns:ArduinoSelfHost_GetStatus_OutputMessage" />
+      <wsdl:input wsam:Action="http://tempuri.org/IArduinoSelfHost/GetStatus" message="tns:IArduinoSelfHost_GetStatus_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IArduinoSelfHost/GetStatusResponse" message="tns:IArduinoSelfHost_GetStatus_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendCommand">
-      <wsdl:input wsam:Action="http://tempuri.org/ArduinoSelfHost/SendCommand" message="tns:ArduinoSelfHost_SendCommand_InputMessage" />
-      <wsdl:output wsam:Action="http://tempuri.org/ArduinoSelfHost/SendCommandResponse" message="tns:ArduinoSelfHost_SendCommand_OutputMessage" />
+      <wsdl:input wsam:Action="http://tempuri.org/IArduinoSelfHost/SendCommand" message="tns:IArduinoSelfHost_SendCommand_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IArduinoSelfHost/SendCommandResponse" message="tns:IArduinoSelfHost_SendCommand_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendCommandWithResponse">
-      <wsdl:input wsam:Action="http://tempuri.org/ArduinoSelfHost/SendCommandWithResponse" message="tns:ArduinoSelfHost_SendCommandWithResponse_InputMessage" />
-      <wsdl:output wsam:Action="http://tempuri.org/ArduinoSelfHost/SendCommandWithResponseResponse" message="tns:ArduinoSelfHost_SendCommandWithResponse_OutputMessage" />
+      <wsdl:input wsam:Action="http://tempuri.org/IArduinoSelfHost/SendCommandWithResponse" message="tns:IArduinoSelfHost_SendCommandWithResponse_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IArduinoSelfHost/SendCommandWithResponseResponse" message="tns:IArduinoSelfHost_SendCommandWithResponse_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateStatus">
-      <wsdl:input wsam:Action="http://tempuri.org/ArduinoSelfHost/UpdateStatus" message="tns:ArduinoSelfHost_UpdateStatus_InputMessage" />
-      <wsdl:output wsam:Action="http://tempuri.org/ArduinoSelfHost/UpdateStatusResponse" message="tns:ArduinoSelfHost_UpdateStatus_OutputMessage" />
+      <wsdl:input wsam:Action="http://tempuri.org/IArduinoSelfHost/UpdateStatus" message="tns:IArduinoSelfHost_UpdateStatus_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IArduinoSelfHost/UpdateStatusResponse" message="tns:IArduinoSelfHost_UpdateStatus_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_ArduinoSelfHost" type="tns:ArduinoSelfHost">
+  <wsdl:binding name="BasicHttpBinding_IArduinoSelfHost" type="tns:IArduinoSelfHost">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetRawStatus">
-      <soap:operation soapAction="http://tempuri.org/ArduinoSelfHost/GetRawStatus" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IArduinoSelfHost/GetRawStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -72,7 +72,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetStatus">
-      <soap:operation soapAction="http://tempuri.org/ArduinoSelfHost/GetStatus" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IArduinoSelfHost/GetStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -81,7 +81,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendCommand">
-      <soap:operation soapAction="http://tempuri.org/ArduinoSelfHost/SendCommand" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IArduinoSelfHost/SendCommand" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -90,7 +90,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendCommandWithResponse">
-      <soap:operation soapAction="http://tempuri.org/ArduinoSelfHost/SendCommandWithResponse" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IArduinoSelfHost/SendCommandWithResponse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -99,7 +99,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateStatus">
-      <soap:operation soapAction="http://tempuri.org/ArduinoSelfHost/UpdateStatus" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IArduinoSelfHost/UpdateStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -109,7 +109,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="SerialSwitchServiceHost">
-    <wsdl:port name="BasicHttpBinding_ArduinoSelfHost" binding="tns:BasicHttpBinding_ArduinoSelfHost">
+    <wsdl:port name="BasicHttpBinding_IArduinoSelfHost" binding="tns:BasicHttpBinding_IArduinoSelfHost">
       <soap:address location="http://localhost:8080/SerialSwitch" />
     </wsdl:port>
   </wsdl:service>

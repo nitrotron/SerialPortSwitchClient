@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.ServiceModel;
 using System.Collections;
-using SerialPortSwitchClient.cs.SerialSwitch;
+using SerialPortSwitchClient.cs.SerialSwitchService;
 
 
-namespace SerialPortSwitchClient.cs
+namespace SerialPortSwitchClient
 {
     class Program
     {
@@ -20,6 +20,7 @@ namespace SerialPortSwitchClient.cs
         }
         static void Main(string[] args)
         {
+            
             ArduinoSelfHostClient Client = new ArduinoSelfHostClient();
             Program prog = new Program();
 

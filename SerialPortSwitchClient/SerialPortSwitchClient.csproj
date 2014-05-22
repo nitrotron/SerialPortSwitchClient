@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\SerialSwitch\Reference.cs">
+    <Compile Include="Service References\SerialSwitchService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -58,26 +58,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\SerialSwitch\SerialSwitch.xsd" />
-    <None Include="Service References\SerialSwitch\SerialSwitch1.xsd" />
-    <None Include="Service References\SerialSwitch\SerialSwitch2.xsd" />
-    <None Include="Service References\SerialSwitch\SerialSwitch3.xsd" />
-    <None Include="Service References\SerialSwitch\SerialSwitchServiceHost.wsdl" />
+    <None Include="Service References\SerialSwitchService\SerialSwitch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SerialSwitchService\SerialSwitch1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SerialSwitchService\SerialSwitch2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SerialSwitchService\SerialSwitch3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SerialSwitchService\SerialSwitchServiceHost.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SerialSwitch\" />
+    <WCFMetadataStorage Include="Service References\SerialSwitchService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SerialSwitch\SerialSwitch.disco" />
+    <None Include="Service References\SerialSwitchService\SerialSwitch.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SerialSwitch\configuration91.svcinfo" />
+    <None Include="Service References\SerialSwitchService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SerialSwitch\configuration.svcinfo" />
+    <None Include="Service References\SerialSwitchService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SerialSwitch\Reference.svcmap">
+    <None Include="Service References\SerialSwitchService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
