@@ -28,13 +28,13 @@ namespace SerialPortSwitchClient
 
             for (int i = 0; i < 15; i++)
             {
-                Client.SendCommand(ArduinoCommandsCommandTypes.SetTempAlarmLow, "1,50");
-                Client.UpdateStatus();
+                //Client.SendCommand(ArduinoCommandsCommandTypes.SetTempAlarmLow, "1,50");
+                //Client.UpdateStatus();
                 System.Threading.Thread.Sleep(15000);
                 status = Client.GetStatus();
                 prog.printStatus(status);
 
-                Console.WriteLine("THermo 0 = " + status["Thermometer0"]);
+                //Console.WriteLine("THermo 0 = " + status["Thermometer0"]);
             }
             Console.WriteLine("Hit Enter to exit");
             Console.ReadLine();
