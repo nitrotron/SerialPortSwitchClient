@@ -3,16 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Collections;
-using SerialPortSwitchClient.cs.SerialSwitchService;
+//using SerialPortSwitchClient.cs.SerialSwitchService;
 
-
-namespace SerialPortSwitchClient
+[ServiceContract]
+public interface IArduinoSelfHost //: IArduinoSerial
 {
+    [OperationContract]
+    string GetRawStatus();
+    [OperationContract]
+    Dictionary<string, decimal> GetStatus();
+    //[OperationContract]
+    //void SendCommand(ArduinoCommands.CommandTypes cmd, string text);
+    //[OperationContract]
+    //Dictionary<string, decimal> SendCommandWithResponse(ArduinoCommands.CommandTypes cmd, string text);
+    [OperationContract]
+    void UpdateStatus();
+}
+
+    public class ArduinoSelfHostClient : ClientBase<IArduinoSelfHost>, IArduinoSelfHost
+    {
+        public ArduinoSelfHostClient(Binding binding, EndpointAddress address)
+            : base(binding, address)
+        {
+        }
+
+        public string GetRawStatus()
+        {
+            return Channel.GetRawStatus();
+        }
+        public Dictionary<string, decimal> GetStatus()
+        {
+            return Channel.GetStatus();
+        }
+        public void UpdateStatus()
+        {
+            Channel.UpdateStatus();
+        }
+    }
+
+
     class Program
     {
         public void printStatus(Dictionary<string, decimal> dict)
         {
+            Console.WriteLine(dict.Count());
             foreach (var item in dict)
             {
                 Console.WriteLine(item.Key.ToString() + " = " + item.Value.ToString());
@@ -20,8 +56,12 @@ namespace SerialPortSwitchClient
         }
         static void Main(string[] args)
         {
+            var binding = new BasicHttpBinding();
+            //var address = new EndpointAddress("http://localhost:8080/SerialSwitch");
+            var address = new EndpointAddress("http://192.168.0.16:8080/SerialSwitch");
+            //var client = new HelloClient(binding, address);
             
-            ArduinoSelfHostClient Client = new ArduinoSelfHostClient();
+            ArduinoSelfHostClient Client = new ArduinoSelfHostClient(binding,address);
             Program prog = new Program();
 
             Dictionary<string, decimal> status = Client.GetStatus();
@@ -31,9 +71,10 @@ namespace SerialPortSwitchClient
                 //Client.SendCommand(ArduinoCommandsCommandTypes.SetTempAlarmLow, "1,50");
                 //Client.UpdateStatus();
                 System.Threading.Thread.Sleep(15000);
+                Console.WriteLine("Getting Data");
                 status = Client.GetStatus();
                 prog.printStatus(status);
-
+                Console.WriteLine("DoneGetting data");
                 //Console.WriteLine("THermo 0 = " + status["Thermometer0"]);
             }
             Console.WriteLine("Hit Enter to exit");
@@ -41,4 +82,4 @@ namespace SerialPortSwitchClient
             
         }
     }
-}
+
