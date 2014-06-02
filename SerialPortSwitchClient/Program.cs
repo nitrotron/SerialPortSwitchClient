@@ -14,8 +14,8 @@ public interface IArduinoSelfHost //: IArduinoSerial
     string GetRawStatus();
     [OperationContract]
     Dictionary<string, decimal> GetStatus();
-    //[OperationContract]
-    //void SendCommand(ArduinoCommands.CommandTypes cmd, string text);
+    [OperationContract]
+    void SendCommand(int ArduinoCommands, string text);
     //[OperationContract]
     //Dictionary<string, decimal> SendCommandWithResponse(ArduinoCommands.CommandTypes cmd, string text);
     [OperationContract]
@@ -40,6 +40,11 @@ public interface IArduinoSelfHost //: IArduinoSerial
         public void UpdateStatus()
         {
             Channel.UpdateStatus();
+        }
+
+        public void SendCommand(int ArduinoCommands, string text)
+        {
+            Channel.SendCommand(ArduinoCommands, text);
         }
     }
 
@@ -66,17 +71,19 @@ public interface IArduinoSelfHost //: IArduinoSerial
 
             Dictionary<string, decimal> status = Client.GetStatus();
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 2; i++)
             {
                 //Client.SendCommand(ArduinoCommandsCommandTypes.SetTempAlarmLow, "1,50");
                 //Client.UpdateStatus();
-                System.Threading.Thread.Sleep(15000);
+                System.Threading.Thread.Sleep(500);
                 Console.WriteLine("Getting Data");
                 status = Client.GetStatus();
                 prog.printStatus(status);
                 Console.WriteLine("DoneGetting data");
                 //Console.WriteLine("THermo 0 = " + status["Thermometer0"]);
             }
+
+            Client.SendCommand(1, "");
             Console.WriteLine("Hit Enter to exit");
             Console.ReadLine();
             
